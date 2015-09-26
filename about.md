@@ -8,7 +8,13 @@ The user can enter the last eruption duration using the slider bar. The decimal 
 
 ***Display plots***
 
-The user can view the plots on the data used to build the prediction model. Four options are provided, 1) Scatter plot 2)Regression Line 3) Histogram of waiting time 4) Histogram of eruption duration. 
+The user can view the plots on the data used to build the prediction model. Four options are provided:
+
+1. Scatter plot 
+2. Regression Line 
+3. Histogram of waiting time 
+4. Histogram of eruption duration. 
+
 The user can select one of the above four, to display on the bottom right half of the page. 
 
   
