@@ -1,0 +1,45 @@
+---
+title       : Old Faithful Predictions App
+subtitle    : 
+author      : Bipin Karunakaran
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Overview 
+The Old Faithful Geyser is the most predictable and arguably the most famous Geyser in the Yellow Stone National Park in Wyoming. The datasets package in R gives access to a data set named 'faithful' that has 272 records of wait times against prior eruption durations, over a period of itme. The App outputs exploratory charts and  predicts the wait time before next eruption, based on a predictive model fitted on this data.
+- User can enter the last eruption duration
+- App outputs the predicted wait time based on a regression model 
+- The wait time (waiting) is the target variable and previous eruption duration (eruptions) is the predictor: lm(waiting ~ eruptions, data = faithful)
+- App also displays scatter plots, regression line and histograms
+- [Visit Old Faithful App](https://bkarun.shinyapps.io/faithful)
+- Please read the 'about' tab for details on how to use the app 
+
+--- .class #id 
+
+## Prediction Model
+```{r echo = FALSE }
+summary(lm(waiting ~ eruptions, data = faithful))
+```
+
+--- 
+
+## Output
+- Uses the predict function on the input value to generate the prediction and display in a text box 
+- Also generates 4 different plots on faithful dataset, one of which the user can select for display using the drop down option
+```{r echo = FALSE}
+library(ggplot2)
+ggplot(faithful, aes(x = eruptions, y = waiting)) + geom_point(shape=1) + geom_smooth(method = lm) +labs(x = 'Previous Eruption Duration', y = 'Wait Time', title = 'Regression Line: Wait Time ~ Eruption Duration')
+```     
+
+---
+## Conclusion
+- App created for a simple demonstration of the use of the shiny package to create interactive web applications from R, as part of the Developing Data Products Course on Coursera from Johns Hopkins University
+- This presentation also demonstrates the use of Slidify for generating presentations from a markdown document
+- The app can be cleaned up and provided with a professional appearance, as the creator gets more adept at using Shiny
+

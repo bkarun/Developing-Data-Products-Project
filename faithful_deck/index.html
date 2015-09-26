@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Old Faithful Predictions App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Old Faithful Predictions App">
+  <meta name="author" content="Bipin Karunakaran">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Old Faithful Predictions App</h1>
+    <h2></h2>
+    <p>Bipin Karunakaran<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Overview</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The Old Faithful Geyser is the most predictable and arguably the most famous Geyser in the Yellow Stone National Park in Wyoming. The datasets package in R gives access to a data set named &#39;faithful&#39; that has 272 records of wait times against prior eruption durations, over a period of itme. The App outputs exploratory charts and  predicts the wait time before next eruption, based on a predictive model fitted on this data.</p>
+
+<ul>
+<li>User can enter the last eruption duration</li>
+<li>App outputs the predicted wait time based on a regression model </li>
+<li>The wait time (waiting) is the target variable and previous eruption duration (eruptions) is the predictor: lm(waiting ~ eruptions, data = faithful)</li>
+<li>App also displays scatter plots, regression line and histograms</li>
+<li><a href="https://bkarun.shinyapps.io/faithful">Visit Old Faithful App</a></li>
+<li>Please read the &#39;about&#39; tab for details on how to use the app </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Prediction Model</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>## 
+## Call:
+## lm(formula = waiting ~ eruptions, data = faithful)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -12.0796  -4.4831   0.2122   3.9246  15.9719 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  33.4744     1.1549   28.98   &lt;2e-16 ***
+## eruptions    10.7296     0.3148   34.09   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 5.914 on 270 degrees of freedom
+## Multiple R-squared:  0.8115, Adjusted R-squared:  0.8108 
+## F-statistic:  1162 on 1 and 270 DF,  p-value: &lt; 2.2e-16
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Output</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Uses the predict function on the input value to generate the prediction and display in a text box </li>
+<li>Also generates 4 different plots on faithful dataset, one of which the user can select for display using the drop down option
+<img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>App created for a simple demonstration of the use of the shiny package to create interactive web applications from R, as part of the Developing Data Products Course on Coursera from Johns Hopkins University</li>
+<li>This presentation also demonstrates the use of Slidify for generating presentations from a markdown document</li>
+<li>The app can be cleaned up and provided with a professional appearance, as the creator gets more adept at using Shiny</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Overview'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Prediction Model'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Output'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
