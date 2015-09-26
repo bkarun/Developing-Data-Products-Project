@@ -16,7 +16,7 @@ shinyUI(navbarPage("old Faithful Predictions",
     h3('Results of prediction model'),
     h4('Last eruption duration entered:'),
     verbatimTextOutput("inputValue"),
-    h4('Predicted wait time before next eruption:'),
+    h3('Predicted wait time before next eruption:'),
     verbatimTextOutput("prediction"), 
     plotOutput('newPlot')
   )
